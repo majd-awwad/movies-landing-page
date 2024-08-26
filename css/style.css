@@ -3,6 +3,118 @@ body {
     margin: 120px;
 }
 
+
+.trending {
+    position: absolute;
+    top: 70%;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    align-items: center;
+}
+
+.header-container .fire-img {
+    width: 42px;
+    height: 42px;
+    font-family: Inter , "sans-serif";
+}
+
+.header-container h1 {
+    text-transform: capitalize;
+    color: #030303;
+    font-size: 37.44px;
+
+}
+.header-container hr {
+    background-color: #504A7950;
+    height: 1px;
+    width: 98%;
+}
+.header-container h4 a{
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: #030303;
+    text-decoration: none;
+}
+
+.movies {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fill , minmax(209px, 1fr));
+    grid-gap: 25px;
+    position: relative;
+}
+
+.bubble {
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    background: linear-gradient(#FF004D20 , #1F2F9820);
+    filter: blur(1px);
+
+    position: absolute;
+    left: -10%;
+    top: -3%;
+    z-index: -1;
+}
+
+.movies a {
+   text-decoration: none;
+    color: #030303;
+}
+
+.movies a img {
+    width: 209px;
+    height: 316px;
+}
+
+.movies .movie-name{
+    width: 90%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 20px;
+    font-family: Inter , "sans-serif";
+    color: #030303;
+    text-transform: capitalize;
+
+    margin: 0;
+}
+
+.movies .movie-details p {
+    font-size: 21.2px;
+    color: #3B3B3B;
+    display: inline-block;
+}
+
+.movies .movie-details .date {
+    margin-right: 25%;
+}
+
+.movies .movie-details .red-dot {
+    position: relative;
+}
+
+.movies .movie-details .red-dot::before {
+    content: "";
+
+    width: 5.3px;
+    height: 5.3px;
+    background-color: #FF014C;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: -15%;
+    margin-top: -2.65px;
+
 .bebas-neue-regular {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
