@@ -4,14 +4,29 @@ body {
 }
 
 
+.for-you {
+    position: absolute;
+    top: 150%;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+
 .trending {
+
     position: absolute;
     top: 70%;
     width: 90%;
     box-sizing: border-box;
 }
 
-.header-container {
+.foryou-header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+}
+
+.trending-header-container {
     display: grid;
     grid-template-columns: auto auto 1fr auto;
     align-items: center;
@@ -50,7 +65,7 @@ body {
     position: relative;
 }
 
-.bubble {
+.bubble-top {
     width: 275px;
     height: 275px;
     border-radius: 50%;
@@ -62,6 +77,20 @@ body {
     top: -3%;
     z-index: -1;
 }
+
+.bubble-down {
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    background: linear-gradient(#FF004D20 , #1F2F9820);
+    filter: blur(1px);
+
+    position: absolute;
+    right: -7.5%;
+    bottom: 20%;
+    z-index: -1;
+}
+
 
 .movies a {
    text-decoration: none;
@@ -86,6 +115,7 @@ body {
     text-transform: capitalize;
 
     margin: 0;
+    margin-top: 5%;
 }
 
 .movies .movie-details p {
@@ -279,4 +309,5 @@ body {
     height: 100%;
     background-color: #f6f4ff;
     z-index: -1;
+
 }
