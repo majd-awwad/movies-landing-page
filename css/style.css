@@ -9,6 +9,12 @@ body {
     font-style: normal;
 }
 
+.just-another-hand-regular {
+    font-family: "Just Another Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .slider {
     max-width: 100%;
     position: relative;
@@ -104,4 +110,61 @@ body {
     width: 60%;
     height: 551px;
     scale: 1.2 1;
+  
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    color: red;
+    font-size: 64.36px;
+}
+
+.logo img {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    top: 20px;
+}
+
+.logo span {
+    margin-left: 10px;
+    color: #494949;
+}
+
+.links {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 45%;
+}
+
+.links li{
+    list-style-type: none;
+    text-transform: capitalize;
+    font-size: 23.26px;
+}
+
+.links li a {
+    text-decoration: none;
+    color: #444444;
+}
+
+.links li:first-child a{
+    color: #C40E61;
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.links-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #f6f4ff;
+    z-index: -1;
 }
