@@ -495,7 +495,7 @@ header .container .links-background{
 /*The Play Icon*/
 .slider .slider-images-container .material-symbols-outlined {
     position: absolute;
-    top: 57%;
+    top: 60%;
     right: 30%;
     font-size: 6.25rem;
     color: white;
@@ -516,7 +516,7 @@ header .container .links-background{
 
 .slider .slider-images-container .vector-img {
     position: absolute;
-    top: 18.5%;
+    top: 21%;
     right: -19%;
     transform: scale(0.6, 0.5);
     max-width: 100%;
