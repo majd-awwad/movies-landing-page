@@ -1,10 +1,13 @@
-/*Start Global Rules*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); /*Start Global Rules*/
+
+
 :root {
     --dark-black-color: #030303;
     --nav-links-gray: #444444;
     --header-color: #434343;
     --section-horiz-line-color: #504A7950;
     --gray-paragraph-color: #676767;
+    --light-gray-color: #bcb9b9;
     --movie-details-color: #3B3B3B;
     --blue-heading-color: #2203FF;
     --dot-red-color: #FF014C;
@@ -22,6 +25,7 @@
 }
 
 * {
+    font-family: "Inter" , sans-serif;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -105,6 +109,7 @@ ul {
     text-transform: capitalize;
     color: var(--dark-black-color);
     font-size: 2.34rem;
+    margin-right: 0.3rem;
 }
 
 .section-heading-container hr {
@@ -121,6 +126,14 @@ ul {
     text-decoration: none;
 }
 
+.section-heading-container h4:hover a {
+    animation: toBold 0.3s linear forwards , inc-font-size 0.3s linear forwards;
+}
+@keyframes inc-font-size {
+    to {
+        font-size: 170%;
+    }
+}
 
 .movies {
     display: grid;
@@ -140,6 +153,12 @@ ul {
     height: 19.75rem;
 }
 
+.movies a img:hover {
+    transform: scale(1.1 , 1.1) translateY(-2.5%);
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
 .movies .movie-name{
     width: 90%;
 
@@ -152,6 +171,18 @@ ul {
     text-transform: capitalize;
 
     margin: 5% 0 0;
+}
+
+.movies .movie-name:hover {
+    animation: 0.2s full-name ease forwards;
+}
+
+@keyframes full-name {
+    to {
+        overflow: visible;
+        background-color: white;
+        text-wrap: wrap;
+    }
 }
 
 .movies .movie-details p {
@@ -188,8 +219,18 @@ ul {
     border-radius: 50%;
     background: linear-gradient(var(--first-color-for-buble-gradient) , var(--second-color-for-buble-gradient));
     filter: blur(0.063rem);
-
+    animation: spin 5s infinite;
 }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 
 /*End Components*/
 
@@ -206,6 +247,17 @@ header .container {
 
 header .container .logo {
     flex-wrap: nowrap;
+    position: relative;
+}
+header .container .logo:hover {
+    animation: 0.7s disappear ease-in;
+}
+
+@keyframes disappear {
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
 
 header .container .logo img {
@@ -283,10 +335,16 @@ header .container .links li:first-child a {
 }
 
 header .container .links li:hover a {
-    transition: 0.5s;
-    transition-property: font-weight , color , padding-right , padding-left;
     color: var(--selected-link-color);
-    font-weight: 600;
+    transition: color 0.5s , font-weight 1s;
+    animation: 0.3s linear 0s toBold;
+    animation-fill-mode: forwards;
+}
+
+@keyframes toBold {
+    to {
+        font-weight: 600;
+    }
 }
 
 header .container .links-background{
@@ -310,6 +368,7 @@ header .container .links-background{
 
 .slider-text {
     margin-left: 15%;
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 106.25rem) {
@@ -339,15 +398,32 @@ header .container .links-background{
 .slider-text h2{
     font-size: 4.037rem;
     color: var(--dark-black-color);
+    animation: 1s jump alternate infinite;
+}
+
+@keyframes jump {
+    to {
+        transform: translateY(-1rem);
+    }
 }
 
 .slider-text h1{
     font-size: 6.427rem;
     position: relative;
-    background: -webkit-linear-gradient(0deg , var(--blue-heading-color) 10% , var(--red-heading-color) 40%);;
+    background: -webkit-linear-gradient(0deg , var(--blue-heading-color), var(--red-heading-color) 30% ,var(--red-heading-color) 40%,   var(--blue-heading-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 0.8;
+    background-size: 200% auto;
+    -webkit-animation: header-gradient 5s linear infinite;
+    -moz-animation: header-gradient 5s linear infinite;
+    animation: header-gradient 5s linear infinite;
+
+}
+@keyframes header-gradient {
+    to{
+        background-position: 200% center;
+    }
 }
 
 .slider-text p{
@@ -367,7 +443,35 @@ header .container .links-background{
     font-family: "inter" , sans-serif;
     position: relative;
     transform: translateX(36.5%);
+    cursor: pointer;
+    &:hover {
+        &::before {
+            display: block;
+        }
+    }
 }
+
+.slider-text button::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: var(--light-gray-color);
+    border-radius: 0.527rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: none;
+    animation: 1s button-fill ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes button-fill {
+    to {
+        width: 100%;
+    }
+}
+
 
 .slider-text button img {
     width: 2.182rem;
@@ -385,26 +489,91 @@ header .container .links-background{
     height: 43.75rem;
     position: absolute;
     top: 25%;
-    right: 16%;
+    right: 18%;
 }
 
+/*The Play Icon*/
 .slider .slider-images-container .material-symbols-outlined {
     position: absolute;
-    top: 62%;
-    right: 28%;
+    top: 57%;
+    right: 30%;
     font-size: 6.25rem;
     color: white;
+    z-index: 1;
 }
+
+.slider .slider-images-container .material-symbols-outlined:hover {
+    animation: 0.5s scale ease forwards;
+}
+
+@keyframes scale {
+    to {
+        font-size: 8rem;
+        color: #d8d5d5;
+    }
+}
+
 
 .slider .slider-images-container .vector-img {
     position: absolute;
-    top: 34%;
-    right: -18%;
+    top: 18.5%;
+    right: -19%;
     transform: scale(0.6, 0.5);
     max-width: 100%;
     min-height: 100%;
 }
 
+@media (min-width: 120.625rem) {
+    .slider .slider-images-container .vector-img {
+        right: -5%;
+        transform: scale(0.65, 0.45);
+    }
+
+    .slider .slider-images-container .back-img {
+        right: 3%;
+    }
+
+    .slider .slider-images-container .front-img {
+        right: 20%;
+    }
+
+    /*The Play Icon*/
+    .slider .slider-images-container .material-symbols-outlined {
+        right: 28%;
+    }
+}
+@media (max-width: 106.25rem) {
+    .slider .slider-images-container .vector-img {
+        right: -13%;
+        top: 22%;
+        transform: scale(0.6, 0.45);
+    }
+
+}
+@media (max-width: 100rem) {
+    .slider .slider-images-container .vector-img {
+        right: -19%;
+        top: 16%;
+        transform: scale(0.6, 0.4);
+    }
+
+    .slider .slider-images-container .back-img {
+        right: 3%;
+        height: 32rem;
+    }
+
+    .slider .slider-images-container .front-img {
+        right: 16%;
+        height: 37rem;
+    }
+
+    /*The Play Icon*/
+    .slider .slider-images-container .material-symbols-outlined {
+        top: 50%;
+        right: 25%;
+        font-size: 5.5rem;
+    }
+}
 @media (max-width: 92rem) {
     .slider {
         display: flex;
@@ -426,13 +595,13 @@ header .container .links-background{
     }
 
     .slider .slider-images-container .front-img {
-        position: absolute;
+        height: 43.75rem;
         top: 5%;
         left: 5%;
     }
 
     .slider .slider-images-container .back-img {
-        position: absolute;
+        height: 39.813rem;
         top: 7%;
     }
 
@@ -459,6 +628,13 @@ header .container .links-background{
         position: absolute;
         top: 11%;
         left: 4%;
+    }
+
+    .slider-text h1{
+        background: -webkit-linear-gradient(0deg , var(--blue-heading-color) 10% , var(--red-heading-color) 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-wrap: nowrap;
     }
 }
 @media (max-width: 62rem) {
@@ -495,7 +671,7 @@ header .container .links-background{
 /*Start Trending Section*/
 
 .trending {
-    margin-top: calc(var(--section-top-margin) / 1.5);
+    margin-top: calc(var(--section-top-margin));
 }
 
 @media (max-width: 48rem) {
