@@ -2,67 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movies</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Title</title>
 
     <!-- Font Section -->
-  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Just+Another+Hand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
 
-    <!-- End Font Section -->
+    <!--    Awesome Icons Library   -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!--    Google Variable Font    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!--    Normalization   -->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!--    Styling       -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
-<!-- Start nav bar area -->
-<nav class="main-nav">
-    <div class="logo just-another-hand-regular"><img src="img/img_1.png" alt="logo image"> <span>Movies</span>.</div>
-    <ul class="links">
-        <li><a href="#">home</a></li>
-        <li><a href="#">explore</a></li>
-        <li><a href="#">genre</a></li>
-        <li><a href="#">news</a></li>
-        <li><a href="#">movies</a></li>
-        <li><a href="#">tv shows</a></li>
-    </ul>
-    <div class="links-background"></div>
-</nav>
-<!-- End nav bar area -->
-
-
-
-<!-- start Slider area -->
-<section class="slider">
-    <div class="slider-text">
-        <h2 class="bebas-neue-regular">Find Movies</h2>
-        <h1 class="bebas-neue-regular">TV shows and more</h1>
-        <p class="">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        <a><button><img src="img/watch-img.png" alt="Watch Tutorial">Watch Tutorial</button></a>
+<!-- Start Header Section -->
+<header id="Home">
+    <div class="container">
+        <div class="logo space-between-flex">
+            <img src="img/img_1.png" alt="logo image">
+            <div class="logo-text">
+                <h2>Movies<span>.</span> </h2>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <ul class="links center-flex">
+                <li><a href="#Home">home</a></li>
+                <li><a href="#Explore">explore</a></li>
+                <li><a href="#Gerne">genre</a></li>
+                <li><a href="#News">news</a></li>
+                <li><a href="#Movies">movies</a></li>
+                <li><a href="#Tv-Shows">tv shows</a></li>
+                <li class="open-menu">
+                    <input id="links-check" type="checkbox">
+                    <label for="links-check">
+                            <span class="icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="links-background"></div>
     </div>
-    <div class="slider-images-container">
-        <img class="top-right-img" src="img/guardians-of-the-galaxy.png" alt="guardians of the galaxy image">
-        <img class="right-center-img" src="img/spider-man-across-the-spider-verse.png" alt="spider man : across the spider verse image">
-        <a href="#"><img class="play-movie" src="img/play-movie.png" alt="play this movie"></a>
-        <img class="vector-img" src="img/vector.png" alt="vector image">
-    </div>
-</section>
-<!-- End Slider area -->
+</header>
+<!-- End Header Section -->
 
-<!-- start trending area -->
-<section class="trending">
-    <div class="trending-header-container">
-        <img class="fire-img" src="img/red-fire.png" alt="fire image">
-        <h1>trending</h1>
-        <hr>
-        <h4><a href="#">see more</a></h4>
+<!--Start Slider Section-->
+<div class="slider">
+    <div class="container center-flex">
+        <div class="slider-text">
+            <h2 class="">Find Movies</h2>
+            <h1 class="">TV shows and more</h1>
+            <p class="">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <a><button class="center-flex"><span class="material-symbols-outlined">play_circle</span>Watch Tutorial</button></a>
+        </div>
+        <div class="slider-images-container">
+            <img class="back-img" src="img/guardians-of-the-galaxy.png" alt="guardians of the galaxy image">
+            <img class="front-img" src="img/spider-man-across-the-spider-verse.png" alt="spider man : across the spider verse image">
+            <a href="#"><span class="material-symbols-outlined">motion_play</span></a>
+            <img class="vector-img" src="img/vector.png" alt="vector image">
+        </div>
     </div>
+</div>
+<!--End Slider Section-->
+
+<!--Start Trending Section-->
+<div class="trending center-flex" id="Movies">
+    <div class="container">
+        <div class="section-heading-container">
+            <img class="fire-img" src="img/red-fire.png" alt="fire image">
+            <h1>trending</h1>
+            <hr>
+            <h4><a href="#">see more</a></h4>
+        </div>
         <div class="movies">
-            <div class="bubble-top"></div>
+            <div class="bubble"></div>
             <div class="movie">
                 <a href="#">
-
                     <img src="img/guardians-of-the-galaxy.png" alt="movie's image">
                     <h2 class="movie-name">guardians of the galaxy</h2>
                     <div class="movie-details">
@@ -182,19 +210,20 @@
                 </a>
             </div>
         </div>
-</section>
-<!-- end trending area -->
-
+    </div>
+</div>
+<!--End Trending Section-->
 
 <!-- start for-you area -->
-<section class="for-you">
-    <div class="for-you-header-container">
-        <h1>You MAY like tHIS</h1>
-        <hr>
-        <h4><a href="#">see more</a></h4>
-    </div>
+<div class="for-you center-flex" id="Tv-Shows">
+    <div class="container">
+        <div class="section-heading-container">
+            <h1>You MAY like tHIS</h1>
+            <hr>
+            <h4><a href="#">see more</a></h4>
+        </div>
         <div class="movies">
-            <div class="bubble-down"></div>
+            <div class="bubble"></div>
             <div class="movie">
                 <a href="#">
                     <img src="img/Hypnotic.png" alt="movie's image">
@@ -306,9 +335,9 @@
                 </a>
             </div>
         </div>
-</section>
+    </div>
+</div>
 <!-- End for-you area -->
 
 </body>
 </html>
-
