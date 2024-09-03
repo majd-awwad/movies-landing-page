@@ -2,6 +2,10 @@
 
 This repository contains a movies landing page designed based on a Figma prototype. The landing page is aimed at providing an attractive and responsive interface for movie watching and downloading.
 
+## Demo
+
+[Link to the live demo](https://majd-awwad.github.io/movies-landing-page/)
+
 ## Features
 
 - **Responsive Design**: The landing page adapts to different screen sizes, ensuring a seamless user experience across all devices.
