@@ -22,4 +22,4 @@ To view this project locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/movies-landing-page.git
+   git clone https://github.com/majd-awwad/movies-landing-page.git
